@@ -52,3 +52,9 @@ will sort the input file with no code needed!
 <p>While this example listed the entries in chronological order, your entries are in the order you found them. You'll need to organize them before they can be analyzed.</p>
 <p><em>What is the ID of the guard you chose multiplied by the minute you chose?</em> (In the above example, the answer would be <code>10 * 24 = 240</code>.)</p>
 </article>
+
+## Part 2
+<article class="day-desc"><p><em>Strategy 2:</em> Of all guards, which guard is most frequently asleep on the same minute?</p>
+<p>In the example above, Guard #<em>99</em> spent minute <em>45</em> asleep more than any other guard or minute - three times in total. (In all other cases, any guard spent any minute asleep at most twice.)</p>
+<p><em>What is the ID of the guard you chose multiplied by the minute you chose?</em> (In the above example, the answer would be <code>99 * 45 = 4455</code>.)</p>
+</article>
