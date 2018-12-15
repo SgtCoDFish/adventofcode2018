@@ -5,10 +5,10 @@ use std::collections::HashMap;
 
 
 pub fn smart_insert(vd: &mut VecDeque<char>, c: char) {
-    println!("{:?}", vd);
+    // println!("{:?}", vd);
 
     if vd.len() == 0 {
-        println!("adding {} onto back of empty vd", c);
+        // println!("adding {} onto back of empty vd", c);
         vd.push_back(c);
         return;
     }
@@ -18,25 +18,25 @@ pub fn smart_insert(vd: &mut VecDeque<char>, c: char) {
 
     for (i, a) in vd.iter().enumerate() {
         if (c as u8) < (*a as u8) {
-            println!("{} < {}", c, *a);
+            // println!("{} < {}", c, *a);
             pos = i as i32;
             break;
         } else {
             greater_any = true;
-            println!("{} >= {}", c, *a);
+            // println!("{} >= {}", c, *a);
         }
     }
 
     if pos == -1i32 {
         if greater_any {
-            println!("adding {} to back", c);
+            // println!("adding {} to back", c);
             vd.push_back(c);
         } else {
-            println!("adding {} to front", c);
+            // println!("adding {} to front", c);
             vd.push_front(c);
         }
     } else {
-        println!("adding {} at {}", c, pos);
+        // println!("adding {} at {}", c, pos);
         vd.insert(pos as usize, c);
     }
 }
@@ -81,7 +81,7 @@ pub fn part1() -> std::io::Result<()> {
     }
 
     while available.len() > 0 {
-        println!("{:?}", available);
+        // println!("{:?}", available);
         let val = available.pop_front().unwrap();
         result.push(val);
 
@@ -97,18 +97,18 @@ pub fn part1() -> std::io::Result<()> {
             }
 
             if pos >= 0 {
-                println!("removing {} dependency for {}", val, k);
+                // println!("removing {} dependency for {}", val, k);
                 v.swap_remove(pos as usize);
             }
 
             if v.len() == 0 && !available.contains(k) {
-                println!("Adding {}", *k);
+                // println!("Adding {}", *k);
                 smart_insert(&mut available, *k);
             }
         }
     }
 
-    println!("{:?}", result);
+    println!("Answer is {:?}", result);
 
     Ok(())
 }

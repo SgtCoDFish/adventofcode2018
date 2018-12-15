@@ -4,4 +4,3 @@ version = "0.1.0"
 authors = ["Ashley Davis <ashley_davis10419@hotmail.com>"]
 
 [dependencies]
-regex = "1"
