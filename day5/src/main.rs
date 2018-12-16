@@ -7,7 +7,7 @@ pub fn part1() -> std::io::Result<()> {
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
 
-    let mut cbytes: Vec<u8>  = contents.into_bytes();
+    let mut cbytes: Vec<u8> = contents.into_bytes();
 
     loop {
         let mut changed = false;
@@ -20,16 +20,17 @@ pub fn part1() -> std::io::Result<()> {
             };
 
             if diff == 32 {
-                //println!("Remove {} and {}", cbytes[i] as char, cbytes[i+1] as char);
-                cbytes.remove(i);
-                cbytes.remove(i); // we're removing what _was_ i+1 before we deleted i
+                // 32 is the code for space
+                cbytes[i] = 32;
+                cbytes[i+1] = 32;
                 changed = true;
-                break;
             }
         }
 
         if !changed {
             break;
+        } else {
+            cbytes.retain(|&x| x != 32);
         }
     }
 
