@@ -35,3 +35,31 @@ C      -->D----->E
 <p>So, in this example, the correct order is <em><code>CABDFE</code></em>.</p>
 <p><em>In what order should the steps in your instructions be completed?</em></p>
 </article>
+
+## Part 2
+<article class="day-desc"><p>As you're about to begin construction, four of the Elves offer to help.  "The sun will set soon; it'll go faster if we work together."  Now, you need to account for multiple people working on steps simultaneously. If multiple steps are available, workers should still begin them in alphabetical order.</p>
+<p>Each step takes 60 seconds plus an amount corresponding to its letter: A=1, B=2, C=3, and so on. So, step A takes <code>60+1=61</code> seconds, while step Z takes <code>60+26=86</code> seconds. No time is required between steps.</p>
+<p>To simplify things for the example, however, suppose you only have help from one Elf (a total of two workers) and that each step takes 60 fewer seconds (so that step A takes 1 second and step Z takes 26 seconds). Then, using the same instructions as above, this is how each second would be spent:</p>
+<pre><code>Second   Worker 1   Worker 2   Done
+   0        C          .
+   1        C          .
+   2        C          .
+   3        A          F       C
+   4        B          F       CA
+   5        B          F       CA
+   6        D          F       CAB
+   7        D          F       CAB
+   8        D          F       CAB
+   9        D          .       CABF
+  10        E          .       CABFD
+  11        E          .       CABFD
+  12        E          .       CABFD
+  13        E          .       CABFD
+  14        E          .       CABFD
+  15        .          .       CABFDE
+</code></pre>
+<p>Each row represents one second of time.  The Second column identifies how many seconds have passed as of the beginning of that second.  Each worker column shows the step that worker is currently doing (or <code>.</code> if they are idle).  The Done column shows completed steps.</p>
+<p>Note that the order of the steps has changed; this is because steps now take time to finish and multiple workers can begin multiple steps simultaneously.</p>
+<p>In this example, it would take <em>15</em> seconds for two workers to complete these steps.</p>
+<p>With <em>5</em> workers and the <em>60+ second</em> step durations described above, <em>how long will it take to complete all of the steps?</em></p>
+</article>
